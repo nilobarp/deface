@@ -139,7 +139,7 @@ def video_detect(
         read_iter = cam_read_iter(reader)
     else:
         read_iter = reader.iter_data()
-        nframes = reader.count_frames()
+        nframes = None #frame counting fails on MacOS
     if nested:
         bar = tqdm.tqdm(dynamic_ncols=True, total=nframes, position=1, leave=True)
     else:
